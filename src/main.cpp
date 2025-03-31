@@ -76,12 +76,12 @@ void scroll_callback(GLFWwindow *window, double xoffset, double yoffset)
 
 int main()
 {
-    auto window = initWindow(SCR_WIDTH, SCR_HEIGHT, "BigCousin CG Lab");
-    FontRender fontRender("./fonts/Unicode.ttf");
+    auto window = initWindow(SCR_WIDTH, SCR_HEIGHT, "openGL");
+    FontRender fontRender("./fonts/Arial.ttf");
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     glfwSetCursorPosCallback(window, mouse_callback);
     glfwSetScrollCallback(window, scroll_callback);
-
+    camera.setSensitivity(0.02f);
     glDisable(GL_CULL_FACE);
     glEnable(GL_DEPTH_TEST);
 
